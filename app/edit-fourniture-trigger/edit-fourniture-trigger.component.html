@@ -1,0 +1,12 @@
+<img (click)="showForm()" src="/assets/edit.svg" />
+<ng-template #shown>
+    <div class="editfournitureform">
+        <app-editfournitureform [item]="item" [type]="type" [nombre]="nombre"></app-editfournitureform>
+    </div>
+    <div class="overlay" (click)="hideForm()"></div>
+  </ng-template>
+  
+  <ng-template #hidden>
+  </ng-template>
+  
+  <ng-container *ngIf="etat === 'shown'; then shown; else hidden"></ng-container>

@@ -1,0 +1,23 @@
+<div class="component-white">
+<h2>Ajouter un materiel</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="inputgpe">
+        <label>num inventaire:</label>
+        <input type="text" id="inventaire" placeholder="Entrez le num invetaire" [(ngModel)]="formData.numInventaire" name="type" required>
+    </div>
+    <br>
+    <div class="inputgpe">
+        <label>type:</label>
+        <input type="text" id="type" placeholder="Entrez le type" [(ngModel)]="formData.type" name="type" required>
+    </div>
+    <br>
+    <div class="inputgpe">
+        <label>date acquisition:</label>
+        <input type="date" #dateAcquisition (change)="onChange()" [(ngModel)]="formData.dateAcquisition" required
+        min="2022-09-31">
+    </div>
+    <br>
+   
+    <button type="submit" [disabled]="!f.valid">Ajouter</button>
+  </form>
+  </div>

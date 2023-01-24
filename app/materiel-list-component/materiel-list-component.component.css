@@ -1,0 +1,21 @@
+input {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-top: 25px;
+    background: #f1f5f7;
+    min-width: 300px;
+    }
+.exporter {
+        border: none;
+        background: transparent;
+        transform: translate(10px, 14px);
+        cursor: pointer;
+        transition: all .35s;
+    }
+.exporter:hover {
+    transform: translate(10px, 11px) scale(1.02);
+}
+.exporter img {
+    height: 40px;
+}

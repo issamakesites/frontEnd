@@ -1,0 +1,9 @@
+<select id="choix" name="choix" [(ngModel)]="choix" required>   
+    <br/>
+    <option *ngFor="let enseignant of enseignants; let first"
+    [value]="enseignant.id">
+        {{enseignant.nom}} {{enseignant.prenom}}
+    </option>
+</select>
+<button (click)="affecter()">affecter</button>
+<button class="delete" (click)="supprimer()">supprimer</button>

@@ -1,0 +1,16 @@
+<div class="component-white">
+<h2>Ajouter une fourniture</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="inputgpe">
+        <label>Type:</label>
+        <input type="text" id="type" placeholder="Entrez le type" [(ngModel)]="formData.type" name="type" required>
+    </div>
+    <br>
+    <div class="inputgpe">
+        <label>Nombre:</label>
+        <input type="number" id="nombre" placeholder="Entrez le nombre" [(ngModel)]="formData.nombre" name="nombre" min="1" required>
+    </div>
+    <br>
+    <button type="submit" [disabled]="!f.valid">Ajouter</button>
+  </form>
+</div>

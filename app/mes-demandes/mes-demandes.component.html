@@ -1,0 +1,32 @@
+<ng-template #dispo>
+    <div class="component-white">
+        <h2>Mes Demandes</h2>
+      <table class="listing-table">
+        <tr class="thead">
+          <td class="thead-td">Materiel</td>
+          <td class="thead-td">Date de demande</td>
+          <td class="thead-td">Numero</td>
+          <td class="thead-td" style="text-align: center;">Etat</td>
+        </tr>
+        <tr *ngFor="let demande of demandes">
+          <td>{{ demande.materiel.type }}</td>
+          <td>{{ demande.dateCreation }}</td>
+          <td>{{ demande.id}}</td>
+          <td [ngSwitch]="demande.etat" style="text-align: center;">
+            <span class="pending" *ngSwitchCase="'0'">En attente</span>
+            <span class="success" *ngSwitchCase="'1'">Acceptée</span>
+            <span class="rejected" *ngSwitchCase="'2'">Rejetée</span>
+          </td>
+           </tr>
+      </table>
+    </div>
+    </ng-template>
+    
+    <ng-template #empty>
+        <div class="component-white">
+            <h2>Mes Demandes</h2>
+            <p class="p-warning">Aucune demande a afficher.</p>
+        </div>
+    </ng-template>
+    
+    <ng-container *ngIf="demandes.length!=0; then dispo; else empty"></ng-container>

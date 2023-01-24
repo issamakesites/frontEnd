@@ -1,0 +1,23 @@
+select {
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    background: #f1f5f7;
+    width: 55%;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+button {
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    background: linear-gradient(45deg, #48A1D3, #65C8D2);
+    color: #fff;
+    cursor: pointer;
+    transition: all .35s;
+}
+button:hover {
+    transform: translateY(-4px) !important;
+}

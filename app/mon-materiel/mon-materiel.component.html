@@ -1,0 +1,28 @@
+<ng-template #dispo>
+<div class="component-white">
+    <h2>Mon Materiel</h2>
+  <table class="listing-table">
+    <tr class="thead">
+      <td class="thead-td">Numero d'inventaire</td>
+      <td class="thead-td">Type</td>
+      <td class="thead-td">Date d'acquisition</td>
+      <td class="thead-td">Date d'affectation</td>
+    </tr>
+    <tr *ngFor="let materiel of materiels">
+      <td>{{ materiel.numInventaire}}</td>
+      <td>{{ materiel.type }}</td>
+      <td>{{ materiel.dateAcquisition }}</td>
+      <td>{{ materiel.dateAffectation }}</td>
+       </tr>
+  </table>
+</div>
+</ng-template>
+
+<ng-template #empty>
+    <div class="component-white">
+        <h2>Mon Materiel</h2>
+        <p class="p-warning">Aucun materiel a afficher.</p>
+    </div>
+</ng-template>
+
+<ng-container *ngIf="materiels.length!=0; then dispo; else empty"></ng-container>

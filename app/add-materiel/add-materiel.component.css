@@ -1,0 +1,33 @@
+form {
+    width: 30%;
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    min-width: 670px;
+}
+label {
+    color: #252525;
+    font-weight: 600;
+    margin-right: 20px;
+    font-size: 16px;
+}
+input {
+    border: 1px solid #eee;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background: #f1f5f7;
+    width: -webkit-fill-available;
+    margin-top: 10px;
+}
+button {
+    background: linear-gradient(45deg, #48A1D3, #65C8D2);
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .35s;
+}
+button:hover {
+    transform: translateY(-4px);
+}

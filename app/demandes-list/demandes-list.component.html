@@ -1,0 +1,63 @@
+
+    <div class="component-white" >
+        <h2>Demandes en attente</h2>
+      <table class="listing-table">
+        <tr class="thead">
+          <td class="thead-td">Enseignant</td>
+          <td class="thead-td">Materiel</td>
+          <td class="thead-td">Date de demande</td>
+          <td class="thead-td">Numero</td>
+          <td class="actions-td thead-td">Actions</td>
+        </tr>
+        <tr *ngFor="let demande of demandesaAttente">
+          <td>{{ demande.enseignant.nom.toUpperCase() }} {{ demande.enseignant.prenom.charAt(0).toUpperCase() +  demande.enseignant.prenom.slice(1)}}</td>
+          <td>{{ demande.materiel.type }}</td>
+          <td>{{ demande.dateCreation }}</td>
+          <td>{{ demande.id}}</td>
+          <td class="affectation-td">
+            <button (click)="affecter(demande.id)">accepter</button>
+            <button class="delete" (click)="rejeter(demande.id)">rejeter</button>
+          </td>
+          
+           </tr>
+      </table>
+    </div>
+    
+    <div class="component-white" style="background: #e8feee;box-shadow: none;
+    border: 1px solid #ceedd7;">
+        <h2>Demandes acceptées</h2>
+      <table class="listing-table">
+        <tr class="thead">
+          <td class="thead-td">Enseignant</td>
+          <td class="thead-td">Materiel</td>
+          <td class="thead-td">Date de demande</td>
+          <td class="thead-td">Numero</td>
+        </tr>
+        <tr *ngFor="let demande of demandesaAccepte">
+          <td>{{ demande.enseignant.nom }} {{ demande.enseignant.prenom }}</td>
+          <td>{{ demande.materiel.type }}</td>
+          <td>{{ demande.dateCreation }}</td>
+          <td>{{ demande.id}}</td>
+           </tr>
+      </table>
+    </div>
+    
+    <div class="component-white" style="background: #fee8e8;box-shadow: none;
+    border: 1px solid #edced1;">
+        <h2>Demandes rejetées</h2>
+      <table class="listing-table">
+        <tr class="thead">
+          <td class="thead-td">Enseignant</td>
+          <td class="thead-td">Materiel</td>
+          <td class="thead-td">Date de demande</td>
+          <td class="thead-td">Numero</td>
+        </tr>
+        <tr *ngFor="let demande of demandesaRejete">
+          <td>{{ demande.enseignant.nom }} {{ demande.enseignant.prenom }}</td>
+          <td>{{ demande.materiel.type }}</td>
+          <td>{{ demande.dateCreation }}</td>
+          <td>{{ demande.id}}</td>
+           </tr>
+      </table>
+    </div>
+    

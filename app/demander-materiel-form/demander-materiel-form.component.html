@@ -1,0 +1,21 @@
+<div class="component-white">
+<h2>Demander un materiel</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit()">
+    <div class="inputgpe">
+        <label>
+                Veuillez choisir un materiel de la liste:
+        </label>
+        <br />
+        <select id="choix" name="choix" [(ngModel)]="choix.materiel" required>
+            
+            <br/>
+            <option *ngFor="let materiel of materiel; let first"
+            [value]="materiel.id">
+                {{materiel.type}}
+            </option>
+        </select>
+    </div>
+    <br>
+    <button type="submit" [disabled]="!f.valid">Passer la demande</button>
+  </form>
+</div>
